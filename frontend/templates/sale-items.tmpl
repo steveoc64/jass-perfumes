@@ -1,0 +1,29 @@
+{{$catID := .SelectCatID}}
+{{range $key,$value := .Products}}
+
+{{if eq $catID 0}}
+<div class="jass-sale-item" data-id="{{$value.ID}}">
+	<img src="/img/product/{{$value.Image}}">
+	<div class="sale-name">
+		{{$value.Name}}
+	</div>
+ 	<div class="sale-price-small">
+ 		$ {{$value.Price}}
+ 	</div>
+</div>
+{{else if eq $catID $value.CatID}}
+<div class="jass-sale-item" data-id="{{$value.ID}}">
+	<img src="/img/product/{{$value.Image}}">
+	<div class="sale-name">
+		{{$value.Name}}
+	</div>
+ 	<div class="sale-price-small">
+ 		$ {{$value.Price}}
+ 	</div>
+</div>
+{{end}}
+
+{{end}}
+
+
+<div class="jass-logo-small"></div>
