@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"time"
 
-	"./shared"
+	"github.com/steveoc64/jass-perfumes/shared"
 
 	"github.com/go-humble/router"
 	"honnef.co/go/js/dom"

@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"strconv"
 
-	"./shared"
 	"github.com/go-humble/locstor"
 	"github.com/go-humble/router"
 	"github.com/gopherjs/gopherjs/js"
+	"github.com/steveoc64/jass-perfumes/shared"
 	"honnef.co/go/js/dom"
 )
 

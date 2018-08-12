@@ -3,8 +3,8 @@ package main
 import (
 	"strconv"
 
-	"./shared"
 	"github.com/go-humble/router"
+	"github.com/steveoc64/jass-perfumes/shared"
 	"honnef.co/go/js/dom"
 )
 
