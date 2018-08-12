@@ -1,0 +1,877 @@
+body 
+	cursor: pointer
+
+.loadspinner
+	position: fixed
+	top: 5px
+	left: 3px
+
+$jass-nav-height: 5rem
+$jass-footer-height: 4rem
+$jass-container-height: calc(100vh - 9rem)
+.header-pad
+	padding-top: $jass-nav-height
+
+.blog-shares
+	display: flex
+	flex-wrap: nowrap
+	justify-content: center
+
+	div
+		flex: 0 0 6rem	
+		color: $jass-green-solid
+		a 
+			color: $jass-green-solid
+
+// About box
+// .jass-about
+.about-content
+	display: flex
+	flex-wrap: wrap
+	justify-content: center
+	width: 100vw
+	height: $jass-container-height
+	padding-right: 10vw
+	padding-left: 10vw
+	overflow: auto
+
+	span,img,p
+		text-align: center
+		flex: 1
+		flex-basis: 100%
+		font-size: 3rem
+		font-family: 'Josefin Sans',sans-serif
+		object-fit: contain
+	span
+		// font-weight: 800
+		font-size: 1.8rem
+		font-family: 'Raleway'
+		letter-spacing: 1rem
+		border-bottom: 1px solid $jass-green
+		@media screen and (max-width: 320px)
+			font-size: 1.2rem
+			letter-spacing: .6rem
+	img: 
+		max-height: 300px
+
+.privacy-policy
+	p
+		text-align: left
+
+.constrainer
+	max-height: 180px
+	@media screen and (max-height: 320px)
+		max-height: 120px	
+	
+// Images and things
+.jass-logo-container
+	width: 100vw
+	height: $jass-container-height
+	padding: 3rem
+
+.jass-logo-box
+	display: flex
+	align-items: center
+	justify-content: center
+	height: 100%
+	width: 100%
+	// background-image: url("../img/jass.jpg")
+	background-image: url("../img/flowerGS.png")
+	// -webkit-filter: blur(1px)
+	// filter: blur(1px)
+	background-repeat: no-repeat
+	background-position-x: center
+	background-position-y: center
+	background-size: contain
+
+.jass-logo-small-box
+	align-items: center
+	position: fixed
+	height: 8rem
+	bottom: 1rem
+	width: 100%
+	// background-image: url("../img/jass.jpg")
+	background-image: url("../img/flowerGS.png")
+	background-repeat: no-repeat
+	background-position-x: center
+	background-position-y: center
+	background-size: contain
+	z-index: 88
+
+.jass-logo-small
+	position: relative
+	align-items: center
+	height: 8rem
+	width: 100%
+	padding: 2rem
+	// background-image: url("../img/jass.jpg")
+	background-image: url("../img/flowerGS.png")
+	background-repeat: no-repeat
+	background-position-x: center
+	background-position-y: center
+	background-size: contain
+	margin-top: 4rem
+	margin-bottom: 10rem
+	// z-index: 88
+
+.saturate
+	-webkit-filter: saturate(3)
+	filter: saturate(3)
+
+.jass-logo
+	height: 200px
+
+.jass-logo-top
+	// position: absolute
+	// top: 0
+	left: 0
+	// height: 4.8rem
+	max-width: 75vw
+	bottom: 4.8rem
+
+.jass-splash-box
+	position: absolute
+	overflow-x: hidden
+	top: 5rem
+	background-image: url("../img/models/model-000.jpg")
+	background-repeat: no-repeat
+	background-position: bottom
+	background-size: contain
+	width: 99vw
+	max-width: 99vw
+	height: $jass-container-height
+	cursor: pointer
+	@media (orientation: portrait)
+		background-position-y: center
+
+.jass-model-cycle
+	position: absolute
+	top: 5rem
+	background-image: url("../img/models/model-001.jpg")
+	background-repeat: no-repeat
+	background-position: bottom
+	width: 99vw
+	max-width: 99vw
+	height: $jass-container-height
+	background-size: contain
+	border-bottom: .3rem solid $jass-green
+	@media (orientation: portrait)
+		background-size: cover
+
+.jass-green-top
+	border-top: 2px solid $jass-green
+
+.jass-options
+	font-family: 'Josefin Sans', sans-serif
+	font-weight: 500
+	position: absolute
+	bottom: 8rem
+	width: 100%
+	@media screen and (max-height: 480px)
+		display: none
+
+	.option-row
+		display: flex
+		width: 100%
+		max-width: 1280px
+		flex-wrap: nowrap
+		justify-content: space-around
+		// border-bottom: 1px solid $jass-shade
+		height: 2.8rem
+		padding-left: 20vw
+		padding-right: 20vw
+		@media screen and (max-width: 580px)
+			padding-left: 10vw
+			padding-right: 10vw
+		@media(orientation: portrait)
+			height: 5rem
+			padding-left: 1rem 
+			padding-right: 1rem 
+		span
+			font-size: 2.4rem
+			flex: 1
+			text-align: center
+			@media(max-width: 320px)
+				font-size: 2rem
+			&:hover
+				color: $jass-green-solid
+				border-bottom: 1px solid $jass-shade
+				font-weight: 800
+
+.green-base
+	border-bottom: .3rem solid $jass-green
+
+.jass-sale-cats
+	position: fixed
+	top: 9rem
+	z-index: 22
+	background: rgba(255, 255, 255, 0.78)
+	border-bottom: 1px solid $jass-green
+	div 	
+		display: flex
+		width: 100vw
+		justify-content: space-between
+		padding-left: 2rem
+		padding-right: 2rem
+		span 
+			flex: 0
+			font-size: 2.2rem
+			font-family: 'Josefin Sans',sans-serif
+			&.highlight
+				color: $jass-green-solid
+				font-weight: 800
+				// text-shadow: 1px 1px 2px black
+
+// Flexbx for items for sale
+.jass-sale-items
+	position: absolute
+	// background-color: $jass-green
+	background-color: white
+	color: black
+	top: 12rem
+	display: flex
+	flex-wrap: wrap 
+	justify-content: space-around
+	align-items: stretch 
+	align-items: center
+	width: 100vw
+	padding: 1rem
+
+// individual item
+.jass-sale-item
+	// flex-grow: 1
+	// flex-shrink: 0
+	// flex-basis: 100%
+	// border: 1px solid black 
+	flex: 0
+	border-radius: .3rem
+	font-family: 'Josefin Sans', sans-serif
+	display: flex
+	flex-wrap: none
+	flex-direction: column
+	align-items: center
+	border: 1px solid white
+	padding: 1rem 4rem 2rem 4rem
+	// height: $jass-container-height
+	// @media screen and (min-width: 320px)
+	// 	flex-basis: calc((100vw - 8rem)/2)
+	// @media screen and (min-width: 560px)
+	// 	flex-basis: calc((100vw - 10rem)/3)
+	// @media screen and (min-width: 992px )
+	// 	flex-basis: calc((100vw - 12rem)/4)
+	img 
+		height: 33vh
+		object-fit: contain
+		max-height: 33vh
+		flex: 1
+	.sale-name
+		height: 7rem
+	.sale-price-small
+		height: 2.4rem
+
+	&:hover
+		border: 1px solid $jass-green
+		border-radius: 10px
+		.sale-image
+			-webkit-filter: saturate(2)
+			filter: saturate(2)
+		.sale-price
+			transition: 1s
+			-webkit-filter: saturate(2)
+			filter: saturate(2)
+		.add-me
+			color: white
+
+.sale-image
+	flex: 0 0
+	// width: 100%
+	// -webkit-filter: saturate(0)
+	// filter: saturate(0)
+	// transition: 1s
+	// display: block
+	// margin: auto
+	// margin-left: auto
+	// margin-right: auto
+	img 
+		max-height: 30vh
+		max-height: auto
+
+.sale-price-small
+	font-size: 1.8rem
+	color: #333
+	flex: 0
+
+.sale-price
+	// flex: 1
+	// background-color: rgba(0, 22, 11, 0.8)
+	background-color: rgb(99, 171, 115)
+	font-weight: 800
+	font-size: 3.2rem
+	color: white
+	// -webkit-filter: saturate(0)
+	// filter: saturate(0)
+	display: flex
+	justify-content: flex-end 
+	flex-wrap: nowrap
+	align-items: flex-end 
+	border-top: 3px solid $jass-green
+	border-bottom: 3px solid $jass-green
+
+	.add-me
+		flex: 1
+		color: #eee
+		padding-left: 2rem
+		font-size: 2.8rem
+		i 	
+			color: transparent
+		// color: transparent
+		// transition: .3s
+
+	.the-price
+		text-align: right
+		padding-right: 3rem
+
+
+.sale-name
+	flex: 0
+	// background-color: rgba(206, 203, 203, 0.78)
+	font-weight: 800
+	font-size: 2.2rem
+	text-align: center
+	border-bottom: 3px solid $jass-green
+
+.sale-descr
+	// flex: 1
+	// background-color: rgba(206, 203, 203, 0.38)
+	font-weight: 200
+	font-size: 2rem
+
+.sale-sku
+	display: none
+	color: cyan
+
+.jass-cart
+	height: $jass-container-height
+
+// Shopping cart control bar
+.jass-sales-bar
+	position: fixed
+	z-index: 66
+	// top: 5rem
+	height: 4rem
+	width: 100%
+	background-color: black
+	color: white 
+	display: flex
+	justify-content: flex-end
+	flex-direction: row
+	padding: .5rem
+
+.sales-cart
+	flex: 0 0 5rem
+	padding-left: 4rem
+
+.sales-account
+	flex: 1 0 5rem
+
+.sales-qty
+	font-size: 2.2rem
+	font-family: 'Roboto',sans-serif
+	font-weight: 900
+	color: rgba(255,255,255,.8)
+
+.sales-amount
+	font-size: 2.2rem
+	font-family: 'Roboto',sans-serif
+	font-weight: 900
+	padding-left: 4rem
+
+
+// Text pages - not currently used
+.other-pages
+	position: absolute
+	border: 3px solid $jass-green
+	border-radius: 2rem
+	top: $jass-container-height
+	padding: 3rem
+	margin: 3rem
+
+.other-pages section,p
+	padding: 2rem
+	color: black
+	// font-family: 'Raleway', sans-serif
+	font-family: 'Josefin Sans', sans-serif
+	font-size: 2.2rem
+
+// option bar and buttons contained therein
+.jass-option-bar
+	position: absolute
+	top: calc(100vh - 8rem)
+	top: 75vh
+	top: 64vh
+	top: 50vh
+	display: flex
+	justify-content: space-around
+	width: 100%
+	padding: 2rem
+	font-family: 'Josefin Sans', sans-serif
+
+.jass-option-button
+	flex: 1	
+	color: $jass-green
+	max-width: 500px
+	max-width: 33vw
+	border-size: .4rem
+	border-radius: 1rem
+	font-size: 1.8rem
+	font-family: 'Josefin Sans', sans-serif
+
+// choices - not in use at the moment
+.choice-box
+	display: flex
+	align-items: center
+	justify-content: center
+	height: 2.4rem
+	width: 100%
+	position: absolute
+	top: calc(100% - 3rem)
+
+.choices
+
+
+.choice
+	list-style-type: none
+	overflow: hidden
+	position: relative
+
+.choice-item
+	font-family: 'Raleway', sans-serif
+	font-size: 2rem
+	float: left
+	margin: 0 2rem 0 0
+
+	&:hover
+		// color: $jass-green-solid
+		color: #1b95e0
+		transition: .3s
+
+.jass-footer
+	// background-color: #333
+	// background-color: #ccc
+	// background-color: #86c577
+	background-color: rgba(66,103,48,0.4)
+	// color: white
+	color: black
+	position: fixed
+	height: 4rem
+	width: 100vw
+	bottom: 0
+	font-family: 'Roboto', sans-serif
+	font-family: 'Josefin Sans', sans-serif
+	font-weight: 800
+	font-size: 2rem
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-between
+	align-items: flex-end
+	z-index: 200
+	transition: all .3s
+	&:hover
+		// background-color: #444
+		// background-color: #eee
+		// background-color: rgb(200,220,190)
+		background-color: rgba(66,103,48,0.6)
+
+	.social-column
+		// background-color: red
+		text-align: end
+		padding-right: 6rem
+
+	img 
+		max-height: 4rem
+		max-width: 4rem
+		flex: 0 0 6rem
+		object-fit: contain
+	span
+		flex: 1
+		padding-left: 4rem
+		opacity: .6
+		transition: opacity 1s
+		font-size: 2rem
+		&.footer-x
+			flex: 0
+			// color: white
+			color: black
+			opacity: 0
+			padding-right: 1.8rem
+	div
+		display: none 
+		font-size: 1.8rem
+		hr 
+			opacity: .4
+			margin: .3rem 2rem .3rem 2rem
+			border-top: .3rem solid rgb(12,103,13)
+
+	&.clikked
+		height: 32rem
+		align-items: flex-start
+		// background-color: rgb(183, 212, 176)
+		// background-color: rgba(66,103,48,0.6)
+		background-color: rgba(41, 78, 23, 0.85)
+		// border-top: 2px solid rgb(12, 103, 13)
+		border-top: 2px solid #54a255
+		padding-top: 1rem
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a9db80+0,96c56f+100;Green+3D+%232 */
+		background: rgba(169,219,128,.8); /* Old browsers */
+		background: -moz-linear-gradient(top,  rgba(169,219,128,.8) 0%, rgba(150,197,111,1) 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top,  rgba(169,219,128,.8) 0%,rgba(150,197,111,1) 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom,  rgba(169,219,128,.8) 0%,rgba(150,197,111,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a9db80', endColorstr='#96c56f',GradientType=0 ); /* IE6-9 */
+
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#b4e391+0,61c419+50,b4e391+100;Green+3D */
+		background: rgba(180,227,145,.8); /* Old browsers */
+		background: -moz-linear-gradient(left,  rgba(180,227,145,1) 0%, rgba(97,196,25,1) 50%, rgba(180,227,145,1) 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(left,  rgba(180,227,145,1) 0%,rgba(97,196,25,1) 50%,rgba(180,227,145,1) 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to right,  rgba(180,227,145,1) 0%,rgba(97,196,25,1) 50%,rgba(180,227,145,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4e391', endColorstr='#b4e391',GradientType=1 ); /* IE6-9 */
+
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#b4e391+0,5ace79+50,b4e391+100 */
+		background: rgb(180,227,145); /* Old browsers */
+		background: -moz-linear-gradient(left,  rgba(180,227,145,1) 0%, rgba(90,206,121,1) 50%, rgba(180,227,145,1) 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(left,  rgba(180,227,145,1) 0%,rgba(90,206,121,1) 50%,rgba(180,227,145,1) 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to right,  rgba(180,227,145,1) 0%,rgba(90,206,121,1) 50%,rgba(180,227,145,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4e391', endColorstr='#b4e391',GradientType=1 ); /* IE6-9 */
+
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a6e0ac+0,99ccad+100 */
+		background: rgb(166,224,172); /* Old browsers */
+		background: -moz-linear-gradient(top,  rgba(166,224,172,.9) 0%, rgba(153,204,173,1) 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top,  rgba(166,224,172,.9) 0%,rgba(153,204,173,1) 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom,  rgba(166,224,172,.9) 0%,rgba(153,204,173,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6e0ac', endColorstr='#99ccad',GradientType=0 ); /* IE6-9 */
+
+		span
+			color: transparent
+			opacity: .8
+			flex: 1 0 60vw
+			&.footer-x
+				opacity: 1
+				flex: 0 
+				font-size: 3rem
+				color: #336947
+				color: white
+				text-shadow: 2px 1px 6px black
+		div 
+			display: flex
+			flex: 1 0 40vw
+			flex-direction: column
+			flex-wrap: nowrap
+			padding-left: 2rem
+			// border: 1px solid $jass-green
+			// border-radius: 6px
+			// color: $jass-green
+			color: rgb(12, 103, 13)
+			font-size: 2rem
+			font-weight: 800
+			color: #99f99a
+			color: black
+			div
+				flex: 0
+				// color: #ccc
+				color: #ddd
+				color: #333
+				font-size: 1.6rem
+				&:hover
+					// color: white
+					color: black
+			i
+				flex: 0
+				// color: #ccc
+				color: #ddd
+				color: black
+				color: #333
+				padding: .4rem
+				font-size: 2.6rem
+				@media screen and (max-height: 320)
+					padding: .2rem
+				&:hover
+					// color: white
+					color: black
+					color: white
+					color: black
+
+
+$blog-title-bg: rgba(66, 103, 48, 0.4)
+$blog-title-light: rgba(86, 162, 49, 0.4)
+$blog-title-light-real: rgba(86, 162, 49, 0.6)
+$blog-title-light-solid: rgba(86, 162, 49, 0.8)
+
+
+.blog-header
+	display: none
+	position: fixed
+	top: 4rem
+	width: 100%
+	z-index: 40
+	opacity: 0
+	background-color: white
+	color: black
+	font-size: 3rem
+	text-align: center
+	transition: all 2s
+	&.showme
+		display: block
+		opacity: .8
+
+// .jass-blog
+.blog-container
+	display: flex 
+	flex-wrap: wrap
+	flex-direction: row
+	justify-content: space-around
+	background-color: white
+	// padding: 2rem
+	padding-left: 4rem
+	padding-right: 4rem
+	padding-bottom: 12rem
+	// height: calc(100vh - 9rem)
+	// overflow: auto
+	// height: $jass-container-height
+	// top: $jass-nav-height
+	.blog-item
+		position: relative
+		// border: 1px solid white
+		background-color: rgba(0, 0, 0, 0.87);
+		background-size: cover
+		flex: 1 0 auto
+		flex-basis: 100%
+		height: $jass-container-height
+		max-height: 600px
+		// height: 600px
+		margin: 8px
+		overflow: hidden
+		// border: 1px solid black
+		// border-radius: 3px
+		// @media screen and (min-width: 560px)
+		// 	flex-basis: calc((100vw - 8rem)/2)
+		// @media screen and (min-width: 992px )
+		// 	flex-basis: calc((100vw - 12rem)/3)
+		@media screen and (min-width: 800px)
+			flex-basis: 40vw
+		@media screen and (min-width: 1280px)
+			flex-basis: 24vw
+
+		&:hover,&:focus	
+			.blog-item-pic
+				-webkit-filter: saturate(1.2) opacity(1) blur(0)
+				filter: saturate(1.2) opacity(1) blur(0)
+				-webkit-transform: scale(1.1)
+				transform: scale(1.1)
+				// background-position-x: center
+				background-position-x: 75%
+
+			.blog-item-title
+				opacity: 1
+				bottom: 3rem
+
+		.blog-item-pic
+			transition: all .4s ease-in
+			-webkit-filter: saturate(0.3) opacity(.8) 
+			filter: saturate(0.3) opacity(.8)
+			background-size: cover
+			background-position-x: 25%
+			height: 100%
+			width: 100%
+			max-width: 100%
+			cursor: pointer
+
+		.blog-item-title
+			transition: all .6s ease-in
+			position: absolute
+			padding-left: 2rem
+			bottom: -5rem
+			right: 2rem
+			left: 0rem
+			opacity: 0
+			font-family: 'Josefin Sans',sans-serif
+			font-size: 4rem
+			color: white
+			font-weight: 900
+			width: 100%
+			background-color: $blog-title-bg
+			z-index: 99
+
+	.highlight
+		.blog-item-pic
+			-webkit-filter: saturate(1.2) opacity(1)
+			filter: saturate(1.2) opacity(1)
+			// -webkit-transform: scale(1.1)
+			// transform: scale(1.1)
+			// background-position-x: center
+			background-position-x: 75%
+
+		.blog-item-title
+			opacity: 1
+			bottom: 3rem
+
+.jass-blog-article
+	height: $jass-container-height
+
+.blog-article-name
+	// position: fixed
+	// top: 5rem
+	font-size: 5rem
+	padding-left: 2rem
+	font-family: 'Josefin Sans', sans-serif
+	font-weight: 800
+	color: white
+	background-color: $blog-title-light
+	width: 100vw
+	transition: all .8s
+	z-index: 2
+	display: flex
+	align-items: center
+	i 
+		display: none
+	&.shrink1
+		font-size: 4rem
+		background-color: $blog-title-light-real
+	&.shrink2
+		position: fixed
+		top: 5rem
+		font-size: 3rem
+		background-color: $blog-title-light-solid
+		background-color: rgb(145, 202, 117)
+		span 
+			padding-right: 5rem
+		i 
+			display: block
+			position: absolute
+			font-size: 2rem
+			font-weight: 300
+			right: 2rem
+
+.blog-article
+	// position: absolute
+	// top: 5rem
+	transition: all 2s
+	text-align: center
+	height: $jass-container-height
+	overflow-y: auto
+
+	// a,i,.twitter-share-button
+	a,i
+		color: rgba(33, 123, 13, 0.74)
+
+	.blog-article-image
+		// padding: 0 0 0 4rem 
+		width: 100vw
+		display: flex
+		// justify-content: center
+		// justify-content: space-around
+		// height: 75vh
+		transition: all .6s margin-top 0
+		opacity: 1
+		z-index: 0
+		// margin-top: 8rem
+		.image-box
+			// margin-top: .5rem
+			// margin-bottom: .5rem
+			width: 100vw
+			// height: 100%
+			flex: 1
+			z-index: 0
+			display: flex
+			flex-direction: column
+			justify-content: flex-start
+			align-items: center
+			img 
+				height: 100%
+				width: 100%
+				object-fit: contain
+				// max-height: 80vh
+				// max-width: 80vw
+				// max-width: 100vw
+				// margin-top: 9rem
+				// margin-top: .5rem
+				// margin-bottom: .5rem
+				// object-fit: contain
+				// z-index: -2
+				// flex: 0
+				transition: all .8s
+				flex: 0 0 0
+
+	.blog-article-title
+		// position: relative
+		// top: 8.2rem
+		opacity: 1
+		font-size: 3rem
+		// height: 8rem
+		padding-left: 4rem
+		padding-right: 2rem
+		// background-color: $blog-title-bg
+		font-family: 'Josefin Sans', sans-serif
+		font-weight: 800
+		background-color: rgba(82, 156, 46, 0.24)
+		transition: all .6s
+		color: rgba(33, 123, 13, 0.74)
+		// transition: all .6s
+
+	.blog-article-content
+		font-family: 'Josefin Sans', sans-serif
+		font-size: 3rem
+		line-height: 4rem
+		color: black
+		padding: 4rem
+		transition: all .2s
+		// margin-bottom: 6rem
+		@media screen and (max-width: 320px)
+			font-size: 2.6rem
+			line-height: 3.4rem
+
+
+	.jass-logo-small
+		width: 100%
+		display: flex
+		justify-content: space-around
+		margin-top: 4rem
+		// margin-bottom: 10rem
+		i 
+			color: #444
+			flex: 1
+			&.none-such
+				opacity: .1
+
+
+		// opacity: .6
+		// z-index: -1	
+		// position: fixed
+		// top: 5rem
+
+.faded
+	.blog-article-image
+		.image-box
+			justify-content: flex-end
+			margin-top: 4rem
+			img
+				// margin-top: 35vh
+				opacity: 0.8
+				max-width: 70vw
+				// height: 20rem
+				// object-fit: cover
+				// max-height: 70vh
+
+.faded2
+	.blog-article-image
+		.image-box
+			justify-content: flex-end
+			margin-top: 4rem
+			img
+				// margin-top: 35vh
+				opacity: 0.6
+				max-width: 40vw
+				// max-height: 70vh
+	.blog-article-title
+		opacity: .8
+		font-size: 3.6rem
+
+
