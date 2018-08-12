@@ -1,0 +1,229 @@
+<!doctype html>
+<!-- 
+  __  __ _       _     _                     __  ____      _                             _   
+ |  \/  (_)_ __ (_)___| |_ _ __ _   _  ___  / _|/ ___|___ | | ___  _   _ _ __ _ __   ___| |_ 
+ | |\/| | | '_ \| / __| __| '__| | | |/ _ \| |_| |   / _ \| |/ _ \| | | | '__| '_ \ / _ \ __|
+ | |  | | | | | | \__ \ |_| |  | |_| | (_) |  _| |__| (_) | | (_) | |_| | |_ | | | |  __/ |_ 
+ |_|  |_|_|_| |_|_|___/\__|_|   \__, |\___/|_|  \____\___/|_|\___/ \__,_|_(_)|_| |_|\___|\__|
+                                |___/                                                        
+
+                                https://ministryofcolour.net
+                                github.com/ministry-of-colour/jass
+
+                                Adelaide - Tokyo - Singapore
+
+                                We work with Linux
+                                We code in Go, C, PostgreSQL
+                                We deploy on FreeBSD
+                                We share our code openly under an MIT licence
+
+                                We dont do Agile
+                                No recruitment agencies
+
+
+     ______                                               ____              ____       ____        
+ .~      ~.|         |      .'.           .'. .`.      |          |      |          |            
+|          |_________|    .''```.       .'   `   `.    |______    |      |______    |______      
+|          |         |  .'       `.   .'           `.  |          |      |          |            
+ `.______.'|         |.'           `.'               `.|__________|______|__________|___________ 
+
+ -->
+
+
+<html lang="en">
+  <head>
+    <meta name="author" content="Ministry of Colour  https://ministryofcolour.net">
+    <meta name="github" content="https://github.com/ministry-of-colour/jass">
+    <meta name="licence" content="MIT Licence, Copyright (2017) Ministry of Colour">
+
+    <meta name="readme" content="
+===================================================================================
+    Developers README
+===================================================================================
+Welcome to the Chamelee site code base.
+
+If you are reading this from doing a view source to see how this works, 
+you might find it a bit of a wild goose chase for starters.
+
+All is not lost though.
+
+This is an SPA (single page app), with the following lifecycle :
+  - App loads once, via this index.html
+  - App loads jass.js code bundle
+  - jass.js code bundle then executes the app
+  - page transitions within the SPA are managed by jass.js, which
+    loads template content into the various DIVs below
+  - On rare occassions, the SPA may make an AJAX request to the 
+    sever to GET or POST data between screens
+  - All HTML pages are generated on the fly, at the front end, 
+    by running data through embedded templates. There are NO 
+    async loads of pages as external objects 
+  - The embedded templates are bundled inside the jass.js code bundle
+    as compiled strings
+
+If you are looking for the code, please note that this application is written
+entirely in Go.
+
+??? say again ???
+
+The front end, as well as the backend for this app is written in the Go language,
+with the front end components compiled to JS using GopherJS (http://gopherjs.org)
+
+There is NO Javascript involved here (at least not directly), so ..
+welcome to the brave new world of web dev without Javascript.
+
+The original source code for both the front end and backend is published
+under an MIT Licence, and available via github.com/ministry-of-colour/jass
+===================================================================================
+">
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!--Let browser know website is optimized for mobile-->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    
+    <link rel="manifest" href="jass.webmanifest">
+    <meta name="application-name" content="Jass Perfumes">
+    <meta name="description" content="Perfume is magic. It’s mystery. We recreate the smell of a flower. Of wood. Of grass. We capture the essence of life. Liquefy it. We store memories. We make dreams,” he told her once. “What we do is a wonder, an art, and we have a responsibility to do it well. (MJ Rose)">
+
+    <!-- <link rel="icon" href="img/favicon.png" type="image/x-icon"> -->
+    <link rel="icon" sizes="16x16 32x32 48x48 200x200" href="img/jass.png">
+    <title>Jass Perfumes</title>
+
+    <!-- Fonts via CDN -->
+    <link rel="stylesheet" href="/css/font-awesome.min.css">   
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300|Raleway|Roboto:400" rel="stylesheet">
+
+    <!-- Styles -->
+    <link type="text/css" rel="stylesheet" href="/css/jass.css"/>
+  </head>
+
+<body id="app" onresize="resize()">
+  <!-- basic layout in here -->
+  <div class="wrapper">
+
+    <nav class="navigation">
+        <img src="/img/chamelee.png" class="jass-logo-top fade-in three">
+        <i class="loadspinner fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+        <a class="hamburger hamburger--arrow hidden" aria-label="Menu" aria-controls="navigation">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </a>
+
+    </nav>
+  </div>
+
+  <div class="header-pad"></div>
+  <main>
+    <div class="jass-logo-container">
+      <div class="jass-logo-box fade-in fast"></div>
+    </div>
+
+    <!-- 
+    NOTE - It might seem odd that we have a dozen hidden DIVs here
+    for overlaying content, when a single DIV could easily be used
+    to load different templates into.
+
+    Hovever - In the case of this site only, we fade out the existing
+    panel and fade in the new panel simultaneously for a dreamy 
+    UX effect whenever the user transitions between 2 pages on the site.
+
+    Hence - lots of DIVs, hope you understand.
+
+    The Fading API is very simple though - a call to fadeIn("panel1","panel2",...)
+    does all the heavy lifting by fading out all and fading in the newly requested
+    panels.  Code for this is in app/fader.go
+    -->
+
+    <div class="jass-splash-box hidden"></div>
+    <div class="jass-about hidden"></div>
+    <div class="jass-contact hidden"></div>
+    <div class="jass-model-cycle hidden"></div>
+
+    <div class="jass-sales-bar hidden"></div>
+    <div class="jass-sale-cats hidden"></div>
+    <div class="jass-sale-items hidden"></div>
+    <div class="jass-cart hidden"></div>
+    <div class="jass-blog hidden"></div>
+    <div class="jass-blog-article hidden"></div>
+
+    <div class="jass-option-bar hidden">
+      <button id="option-shop" class="hidden">Shop</button>
+      <button id="option-discover" class="hidden">Discover</button>
+    </div>
+
+    <div class="jass-footer"></div>
+
+    <div class="jass-options hidden">
+      <div class="option-row">
+        <span name="opt-fragrance">Fragrances</span>
+        <span name="opt-skincare">Skincare</span>
+        <span name="opt-merch">Merchandise</span>
+      </div>
+      <div class="option-row">
+        <span name="opt-b">Blog</span>
+        <span name="opt-a">Ambassadors</span>
+        <span name="opt-about">About</span>
+        <span name="opt-c">Contact</span>
+      </div>
+    </div>
+  </main>
+
+  <div id="slidemenu-div"></div>
+
+<div class="md-overlay"></div>
+  
+</body>
+
+<!--
+  Add our code bundle. 
+  Note that our code bundle includes jquery 3.1.1.
+
+  Dont bother attempting to load and decipher the jass.js
+  bundle - as this is compiled output from the gopherjs Go -> JS transpiler
+
+  If you want to see the ACTUAL source code that generates
+  this bundle, its all there to be found on GitHub
+
+  https://github.com/ministry-of-colour/jass
+    ... then look in the "app" directory for the app code
+-->
+
+<script src="/jass.js"></script>
+
+<!-- Faceworld SDK via jQuery -->
+<script type="text/javascript">
+$(document).ready(function() {
+  $.ajaxSetup({ cache: true });
+  $.getScript('//connect.facebook.net/en_US/sdk.js', function(){
+    FB.init({
+      appId: '548844651985808',     // Live APP ID for running against jass.com.au
+      // appId: '548857485317858',  // Test APP ID for running against localhost
+      version: 'v2.8'
+    });     
+  });
+});
+</script>
+
+<!-- Google API -->
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+</html>
+
+<!-- 
+  __  __ _       _     _                     __  ____      _                             _   
+ |  \/  (_)_ __ (_)___| |_ _ __ _   _  ___  / _|/ ___|___ | | ___  _   _ _ __ _ __   ___| |_ 
+ | |\/| | | '_ \| / __| __| '__| | | |/ _ \| |_| |   / _ \| |/ _ \| | | | '__| '_ \ / _ \ __|
+ | |  | | | | | | \__ \ |_| |  | |_| | (_) |  _| |__| (_) | | (_) | |_| | |_ | | | |  __/ |_ 
+ |_|  |_|_|_| |_|_|___/\__|_|   \__, |\___/|_|  \____\___/|_|\___/ \__,_|_(_)|_| |_|\___|\__|
+                                |___/                                                        
+
+                                https://ministryofcolour.net
+                                github.com/ministry-of-colour/jass
+
+                                Adelaide - Tokyo - Singapore
+ -->
